@@ -1,0 +1,35 @@
+
+server:
+  port: 9094
+  servlet:
+    context-path: /
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+spring:
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/test;
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  ## https://docs.spring.io/spring-boot/docs/2.7.16-SNAPSHOT/reference/html/
+  jpa:
+    hibernate:
+      ##create
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        ## soutv ???? ??
+        show_sql: true
+        format_sql: true
+        default_batch_fetch_size: 100
+
+logging:
+  level:
+    ## ??? ???? ??
+    org.hibernate.SQL: DEBUG
+    ## ?? ????
+    org.hibernate.type: trace
